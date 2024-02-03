@@ -1,0 +1,41 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.listado-devs{
+   
+    @include m.reset-lista;
+    @include m.grid(1, 3rem);
+
+    @include m.tablet {
+        @include m.grid(2, 3rem);
+    }
+
+    @include m.desktop {
+        @include m.grid(3, 3rem);
+    }
+
+    &__enlace{
+        color: v.$blanco;
+        text-transform: uppercase;
+        font-weight: v.$bold;
+    }
+
+    &__viaje{
+        background-color: lighten(v.$mate, 5%);
+        min-height: 10rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 2rem;
+        border-radius: 5rem;
+        box-shadow: rgb(244, 127, 49) 0px 12px  20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+      
+
+        &:hover {
+            background-color: darken(v.$naranja, 5%);
+            box-shadow: v.$mate 0px 20px 30px -10px;
+        
+        }
+    }
+}

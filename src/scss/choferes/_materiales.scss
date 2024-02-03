@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.listado-materiales {
+    @include m.reset-lista;
+    @include m.grid(1, 1rem);
+    
+    :hover {
+        cursor: pointer;
+    }
+
+    &__material {
+        border-bottom: 2px solid v.$negro;
+        padding: 0 1rem 1rem 1rem;
+        text-align: center;
+
+        &--seleccionado {
+            @extend .listado-materiales__material;
+            background-color: v.$amarillo;
+            border-radius: .5rem;
+        }
+
+        &--label{
+            color: v.$naranja;
+            @include m.texto-fluido(1.8rem, 3rem);    
+            font-weight: v.$bold;
+        }
+        &--p{
+            color: v.$negro;
+            @include m.texto-fluido(1.8rem, 3rem);
+            font-weight: v.$bold;
+        }
+    }
+
+    &__no-resultados{
+        background-color: lighten(v.$rojo, 60%);
+        border-left: .5rem solid v.$rojo;
+        color: v.$rojo;
+        text-align: center;
+    }
+}

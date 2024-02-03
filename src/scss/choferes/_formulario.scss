@@ -1,0 +1,100 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formchofer {
+
+    &__fieldset {
+        // border: none;
+        margin: 1rem 1rem 2rem 1rem;
+        padding: 1rem;
+
+        &--ocultar {
+            display: none;
+        }
+
+        &--mostrar {
+            display: block;
+            margin: 1rem 1rem 2rem 1rem;
+            padding: 1rem;
+        }
+
+
+    }
+
+    &__legend {
+        color: v.$gris;
+        font-size: 2.2rem;
+        font-weight: v.$bold;
+        text-align: center;
+        margin-bottom: .5rem;
+        border-bottom: 3px solid v.$negro;
+        width: 100%;
+        //Texto responsive
+        @include m.texto-fluido(1.8rem, 3rem);
+    }
+
+    &__label {
+        display: flex;
+        flex-direction: column;
+        font-weight: v.$bold;
+        color: v.$naranja;
+        width: 100%;
+        @include m.tablet{
+            display: block;
+        }
+        @include m.texto-fluido(1rem, 3rem);
+
+        &--span {
+            color: v.$negro;
+            @include m.texto-fluido(1rem, 3rem);
+
+        }
+
+        &--texto {
+            color: v.$negro;
+        }
+    }
+
+    &__input {
+        padding: 1rem;
+        border: 2px outset v.$naranja;
+        background-color: lighten(v.$mate, 72);
+        border-radius: .5rem;
+        font-weight: v.$bold;
+        margin-bottom: 1.5rem;
+        @include m.texto-fluido(1.8rem, 3rem);
+        width: 100%;
+    }
+
+    &__select {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        background-color: v.$darkgray;
+        border-radius: .5rem;
+        padding: 1rem;
+        color: v.$blanco;
+        text-align: center;
+        border-radius: .5rem;
+        width: 100%;
+
+        @include m.tablet{
+            width: auto;
+        }
+
+        @include m.texto-fluido(1.8rem, 3rem);
+    }
+
+
+        &__text-area{
+            @extend .formchofer__input;
+            resize: none;
+            border: 3px solid black;
+            margin-top: 1rem;
+        }
+
+    &__submit{
+        @include m.boton(v.$naranja, v.$blanco,flex-end);
+    }
+
+}

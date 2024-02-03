@@ -1,0 +1,18 @@
+{
+    "name": "brianvaldivianavarro/devfast",
+    "description": "Proyecto Devfast MVC, PHP 8, SASS",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\": "./classes"
+        }
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.29",
+        "vlucas/phpdotenv": "^5.4",
+        "intervention/image": "^2.7"
+    }
+}

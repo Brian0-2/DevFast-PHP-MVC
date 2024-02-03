@@ -1,0 +1,101 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &__thead {
+    background-color: v.$gris-oscuro;
+    color: v.$blanco;
+  }
+
+  &__th {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  &__tr {
+    &--disabled{
+      opacity: .5;
+    }
+    &:nth-child(even) {
+      background-color: darken(v.$gris-claro, 10);
+    }
+
+    &:hover {
+      background-color: lighten(v.$naranja, 20%);
+    }
+  }
+
+  &__td {
+    padding: 1.5rem 1rem;
+    font-size: 3rem;
+
+    &--disabled {
+      opacity: 0.5;
+    }
+    &--boton {
+      @include m.boton(v.$verde, v.$blanco, "");
+      padding: 1rem 1rem;
+    }
+    &--acciones {
+      padding: 1rem 0;
+    }
+    &--asignar {
+      display: inline-block;
+      background-color: v.$amarillo;
+      color: v.$rojo;
+      border-left: 0.5rem solid v.$rojo;
+      border-radius: 0.5rem;
+    }
+    &--disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &__imagen {
+    max-width: 20rem;
+    max-height: 20rem;
+  }
+
+  &__accion {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: v.$bold;
+    width: 100%;
+
+    &--editar {
+      color: v.$azul;
+      border-bottom: 0.3rem solid v.$negro;
+      padding-bottom: 1rem;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+    &--eliminar {
+      color: v.$rojo;
+      padding-top: 1rem;
+      
+    }
+
+    &--detalle {
+      color: v.$naranja;
+      padding-top: 1rem;
+      border-top: 3px solid black;
+      margin-top: 1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+    &:disabled {
+      cursor: unset;
+    }
+  }
+}

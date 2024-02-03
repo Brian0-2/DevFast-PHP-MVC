@@ -1,0 +1,115 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.pendientes {
+  padding: 0.5rem;
+
+  .swiper-wrapper {
+    box-sizing: inherit;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: rgba(v.$mate, 0.8);
+    font-weight: v.$bold;
+    padding: 3rem;
+    border-radius: 50%;
+    color: v.$blanco;
+  }
+}
+
+.boleta {
+
+  background-color: v.$azul;
+  border-radius: 1rem;
+  padding: 1rem;
+
+
+  &__header {
+    color: v.$blanco;
+    margin-bottom: .5rem;
+    @include m.grid(2,1rem);
+    p{
+      &:nth-child(1){
+        background-color: v.$naranja;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: v.$negro;
+      font-weight: v.$bold;
+      @include m.tablet{
+        @include m.texto-fluido(.4rem,1.35rem);
+      }
+      background-color: lighten(v.$azul, 10%);
+      padding: .3rem;
+      border-radius: .5rem;
+    }
+    span{
+      color: v.$blanco;
+    }
+
+  }
+
+  &__fieldset{
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+  }
+  &__legend{
+    color: v.$mate;
+    font-weight: v.$bold;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__clientes{
+    @include m.grid(1,1rem);
+    &:nth-child(1){
+      justify-content: flex-start;
+    }
+  }
+  &__cliente{
+    color: v.$negro;
+    &:nth-child(2){ 
+    @include m.texto-fluido(.3rem,1.5rem);
+    }
+  }
+  &__folio{
+  
+    @include m.grid(3,.5rem);
+    
+    p {
+      display: flex;
+      flex-direction: column;
+      color: v.$negro;
+      font-weight: v.$bold;
+    }
+  }
+
+  &__totales {
+    @include m.grid(3,.5rem);
+  }
+
+  &__informacion {
+    color: v.$negro;
+    display: flex;
+    flex-direction: column;
+    font-weight: v.$bold;
+   
+    span {
+      font-weight: normal;
+      color: v.$blanco;
+      background-color: lighten(v.$azul, 10%);
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  &__estados{
+    @include m.grid(2,1rem);
+  }
+  &__estado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

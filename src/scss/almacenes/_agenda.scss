@@ -1,0 +1,33 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.agenda {
+  padding: 0 0 2rem 0;
+  @include m.contenedor;
+
+
+
+  .swiper-wrapper {
+    box-sizing: inherit;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    background-color: rgba(v.$mate, 0.8);
+    font-weight: v.$bold;
+    padding: 3rem;
+    border-radius: 50%;
+    color: v.$blanco;
+  }
+
+
+  &__almacen{
+    margin: 1.3rem 0 1rem 0;
+    font-size: 3rem;
+    text-align: center;
+    border-radius: .5rem;
+  
+    background-color: v.$gris;
+  }
+}
+
+

@@ -1,0 +1,56 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+
+    &__grid{
+        @include m.grid(1,2rem);
+        a,p{
+            @include m.texto-fluido(2rem,3rem);
+        }
+        @include m.tablet{
+            @include m.grid(2,1rem);
+        }
+    }
+
+    &__enlace{
+        @include m.card;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        color: v.$negro;
+        border-radius: .5rem;
+        font-weight: v.$bold;
+        &:hover{
+            background-color: lighten(v.$naranja,10%);
+            color: v.$mate;
+            transition: background-color .5s;
+            transition: color .3s;
+        }
+    }
+
+    &__no-viaje{
+        @include m.card;
+        @extend .principal__enlace;
+        @include m.texto-fluido(2rem,4rem);
+        &-texto{
+           color: v.$negro;
+        }
+        &-icono{
+            color: v.$rojo;
+        }
+    }
+
+    &__icono{
+        @include m.texto-fluido(2rem,4rem);
+        color: v.$negro;
+        font-weight: 700;
+    }
+}

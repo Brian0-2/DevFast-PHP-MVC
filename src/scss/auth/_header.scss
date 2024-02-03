@@ -1,0 +1,25 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    text-align: center;
+    
+    &__enlace{
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+        @include m.tablet{
+            margin-top: 5rem;
+        }
+    }
+
+    &__logo{
+        @include m.texto-fluido(3rem,8rem);
+        @include m.texto-degradado(v.$azul,v.$mate);
+    }
+
+    span{
+        font-size: 1.2rem;
+    }
+}

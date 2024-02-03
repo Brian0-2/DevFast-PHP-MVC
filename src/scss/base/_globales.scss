@@ -1,0 +1,75 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    font-family: v.$fuentePrincipal;
+    font-size: 1.6rem;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+}
+
+.contenedor-m {
+    width: 100%;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.contenedor-sm {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.contenedor-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+
+    @include m.tablet {
+        flex-direction: row;
+        width: 100%;
+        img {
+            width: 50rem;
+        }
+    }
+}
+
+.text-center{
+    text-align: center;
+    margin: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.swal2-popup {
+    position: fixed;
+    width: 40rem; 
+    font-size: 1.6rem; 
+    @include m.tablet{
+        max-width: 300px;
+      
+    }
+  }

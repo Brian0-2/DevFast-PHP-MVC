@@ -1,0 +1,12 @@
+import './pronosticos.js';
+import './crearDevolucion.js';
+import './filtro.js';
+import './contador.js';
+import './slider.js';
+import './alertaMotivo.js';
+import './alertaViaje.js';
+import './alertaRuta.js';
+import './usuario.js';
+import './alertaUsuarios.js';
+import './modal.js';
+import './cancelarDevolucion.js';

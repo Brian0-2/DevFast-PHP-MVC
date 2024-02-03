@@ -1,0 +1,55 @@
+@use "base/mixins" as m;
+@use "base/variables" as v;
+
+.modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  p {
+    margin: 0;
+    font-weight: 900;
+    color: v.$blanco;
+    font-size: 2.5rem;
+  }
+
+  .vista-modal {
+    max-width: 55rem;
+    background-color: lighten(v.$mate, 5%);
+    padding: 2rem;
+    margin: 0 auto;
+    transform: translateY(-30rem);
+    transition: all 500ms ease-in-out;
+    opacity: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+    .cerrar-modal {
+      background-color: v.$naranja;
+      color: v.$negro;
+      border: none;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      text-transform: uppercase;
+      font-weight: v.$bold;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    &.animar {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+
+    &.cerrar {
+      transform: translateY(-200%);
+      opacity: 0;
+    }
+  }
+}
